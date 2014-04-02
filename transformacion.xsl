@@ -13,7 +13,8 @@
       <body>
         <h2>CD catalog</h2>
         <ol>
-          <xsl:for-each select="//cd[position()&lt;6]">
+          <xsl:for-each select="//cd">
+          <xsl:if test="position()&lt;6">
             <li>
               <div class="colorico">
                 <xsl:value-of select="title" />
@@ -25,6 +26,7 @@
               <xsl:text>$</xsl:text>
               <xsl:value-of select="price" />
             </li>
+          </xsl:if>
           </xsl:for-each>
         </ol>
       </body>
